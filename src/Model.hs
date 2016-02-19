@@ -7,6 +7,8 @@
 {-# LANGUAGE QuasiQuotes                #-}
 {-# LANGUAGE TemplateHaskell            #-}
 {-# LANGUAGE TypeFamilies               #-}
+{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE OverloadedStrings #-}
 
 module Model where
 
@@ -19,6 +21,9 @@ import Database.Persist.Postgresql
 import Database.Persist.TH
 import Data.Time
 import Data.Int
+import GHC.Generics
+import Data.Aeson
+import Control.Applicative ((<$>), (<*>))
 
 share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
 Users
@@ -49,9 +54,80 @@ Comment
     deriving Show
 |]
 
+newtype USER = USER (Int64, (Maybe Users))
+instance ToJSON USER where
+  toJSON (USER (uid, (Just (Users e p a i s d)))) = object
+        [ "id" .= uid,
+          "email" .= e,
+          "password" .= p,
+          "alias" .= a,
+          "image_url" .= i,
+          "show_email" .= s,
+          "date" .= d
+        ]
+  toJSON (USER (uid, Nothing)) = object []
+
+instance FromJSON Users where
+    parseJSON (Object o) = Users
+        <$> o .: "email"
+        <*> o .: "password"
+        <*> o .: "alias"
+        <*> o .: "image_url"
+        <*> o .: "show_email"
+        <*> o .: "date"
+    parseJSON _ = fail "Invalid Users"
+
+newtype POST = POST (Int64, (Maybe Post))
+instance ToJSON POST where
+  toJSON (POST (uid, (Just (Post a m p pp i r o mm d)))) = object
+        [ "id" .= uid,
+          "atom" .= a,
+          "material" .= m,
+          "processing" .= p,
+          "params" .= pp,
+          "image_url" .= i,
+          "reference" .= r,
+          "owner" .= o,
+          "material_u" .= mm,
+          "date" .= d  
+        ]
+  toJSON (POST (uid, Nothing)) = object []
+
+instance FromJSON Post where
+    parseJSON (Object o) = Post
+        <$> o .: "atom"
+        <*> o .: "material"
+        <*> o .: "processing"
+        <*> o .: "params"
+        <*> o .: "image_url"
+        <*> o .: "reference"
+        <*> o .: "owner"
+        <*> o .: "material_u"
+        <*> o .: "date"
+    parseJSON _ = fail "Invalid Post"
+
+newtype COMMENT = COMMENT (Int64, (Maybe Comment))
+instance ToJSON COMMENT where
+  toJSON (COMMENT (uid, (Just (Comment o p d t)))) = object
+        [ "id"    .= uid,
+          "owner" .= o,
+          "post"  .= p,
+          "date"  .= d,
+          "text"  .= t
+        ]
+  toJSON (COMMENT (uid, Nothing)) = object []
+
+instance FromJSON Comment where
+    parseJSON (Object o) = Comment
+        <$> o .: "owner"
+        <*> o .: "post" 
+        <*> o .: "date" 
+        <*> o .: "text" 
+    parseJSON _ = fail "Invalid Comment"
+
+
 connStr = "host=localhost dbname=communis-db user=communis password=facilderecordar789 port=5432"
 
--- this is the repeated code that can be factored out
 inBackend :: ReaderT SqlBackend (NoLoggingT (ResourceT IO)) a-> IO a
 inBackend action = runStderrLoggingT $ withPostgresqlPool connStr 10 $ \pool -> liftIO $ do
   flip runSqlPersistMPool pool $ do

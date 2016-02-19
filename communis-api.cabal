@@ -23,4 +23,6 @@ executable communis-api
                        monad-logger,
                        transformers,
                        time,
-                       resourcet
+                       resourcet,
+                       scotty,
+                       aeson

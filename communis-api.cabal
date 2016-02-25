@@ -25,4 +25,5 @@ executable communis-api
                        time,
                        resourcet,
                        scotty,
-                       aeson
+                       aeson,
+                       text

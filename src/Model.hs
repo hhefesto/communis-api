@@ -67,6 +67,16 @@ instance ToJSON USER where
         ]
   toJSON (USER (uid, Nothing)) = object []
 
+instance ToJSON Users where
+  toJSON (Users e p a i s d) = object
+        [ "email" .= e,
+          "password" .= p,
+          "alias" .= a,
+          "image_url" .= i,
+          "show_email" .= s,
+          "date" .= d
+        ]
+
 instance FromJSON Users where
     parseJSON (Object o) = Users
         <$> o .: "email"
@@ -89,9 +99,22 @@ instance ToJSON POST where
           "reference" .= r,
           "owner" .= o,
           "material_u" .= mm,
-          "date" .= d  
+          "date" .= d
         ]
   toJSON (POST (uid, Nothing)) = object []
+
+instance ToJSON Post where
+  toJSON (Post a m p pp i r o mm d) = object
+        [ "atom" .= a,
+          "material" .= m,
+          "processing" .= p,
+          "params" .= pp,
+          "image_url" .= i,
+          "reference" .= r,
+          "owner" .= o,
+          "material_u" .= mm,
+          "date" .= d
+        ]
 
 instance FromJSON Post where
     parseJSON (Object o) = Post
@@ -116,6 +139,14 @@ instance ToJSON COMMENT where
           "text"  .= t
         ]
   toJSON (COMMENT (uid, Nothing)) = object []
+
+instance ToJSON Comment where
+  toJSON (Comment o p d t) = object
+        [ "owner" .= o,
+          "post"  .= p,
+          "date"  .= d,
+          "text"  .= t
+        ]
 
 instance FromJSON Comment where
     parseJSON (Object o) = Comment

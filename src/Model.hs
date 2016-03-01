@@ -156,8 +156,9 @@ instance FromJSON Comment where
         <*> o .: "text" 
     parseJSON _ = fail "Invalid Comment"
 
+data ID = Email String | Id Int64 deriving (Show)
 
-connStr = "host=localhost dbname=communis-db user=communis password=facilderecordar789 port=5432"
+connStr = "host=localhost dbname=communis_db user=communis password=facilderecordar789 port=5432"
 
 inBackend :: ReaderT SqlBackend (NoLoggingT (ResourceT IO)) a-> IO a
 inBackend action = runStderrLoggingT $ withPostgresqlPool connStr 10 $ \pool -> liftIO $ do
@@ -168,6 +169,14 @@ inBackend action = runStderrLoggingT $ withPostgresqlPool connStr 10 $ \pool -> 
 toUserId :: Int64 -> UsersId
 toUserId = toSqlKey
 
+-- toUserId2 :: ID -> Maybe UsersId
+-- toUserId2 (Id a) = Just $ toSqlKey a
+-- toUserId2 (Email em) = inBackend $ do
+--   maybeUser <- getBy $ UniqueEmail em
+--   case maybeUser of
+--     Nothing -> liftIO Nothing
+--     (Entity userId _) -> liftIO $ Just userId
+
 toPostId :: Int64 -> PostId
 toPostId = toSqlKey
 
@@ -175,8 +184,9 @@ toCommentId :: Int64 -> CommentId
 toCommentId = toSqlKey
 
 --User CRUD
-get_user :: Int64 -> IO (Maybe Users)
-get_user = inBackend . get . toUserId
+get_user :: ID -> IO (Maybe (Entity Users))
+get_user (Id a) = inBackend . get . toUserId $ a
+get_user (Email e) = inBackend . getBy $ UniqueEmail e
 
 new_user :: Users -> IO ()
 new_user (Users email pass alias image_url show_email _) = inBackend $ do

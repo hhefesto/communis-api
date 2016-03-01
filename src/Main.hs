@@ -14,7 +14,7 @@ import Data.Text.Lazy
 main :: IO ()
 main = do
   putStrLn "Starting Server..."
-  scotty 8080 $ routes
+  scotty 8000 $ routes
 
 routes :: ScottyM ()
 routes = do

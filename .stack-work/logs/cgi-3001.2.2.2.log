@@ -1,0 +1,29 @@
+Configuring cgi-3001.2.2.2...
+Building cgi-3001.2.2.2...
+Preprocessing library cgi-3001.2.2.2...
+
+Network/CGI.hs:1:14: Warning:
+    -XOverlappingInstances is deprecated: instead use per-instance pragmas OVERLAPPING/OVERLAPPABLE/OVERLAPS
+
+Network/CGI/Monad.hs:1:16: Warning:
+    -fglasgow-exts is deprecated: Use individual extensions instead
+[1 of 6] Compiling Network.CGI.Protocol ( Network/CGI/Protocol.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Network/CGI/Protocol.o )
+[2 of 6] Compiling Network.CGI.Monad ( Network/CGI/Monad.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Network/CGI/Monad.o )
+
+Network/CGI/Monad.hs:31:1: Warning:
+    Module ‘Prelude’ does not export ‘catch’
+
+Network/CGI/Monad.hs:33:1: Warning:
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+
+Network/CGI/Monad.hs:60:1: Warning: Tab character
+[3 of 6] Compiling Network.CGI.Accept ( Network/CGI/Accept.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Network/CGI/Accept.o )
+[4 of 6] Compiling Network.CGI.Cookie ( Network/CGI/Cookie.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Network/CGI/Cookie.o )
+[5 of 6] Compiling Network.CGI.Compat ( Network/CGI/Compat.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Network/CGI/Compat.o )
+[6 of 6] Compiling Network.CGI      ( Network/CGI.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Network/CGI.o )
+In-place registering cgi-3001.2.2.2...
+Installing library in
+/home/hefesto/.stack/snapshots/x86_64-linux/lts-3.10/7.10.2/lib/x86_64-linux-ghc-7.10.2/cgi-3001.2.2.2-HZblaoMAmn1KQZDojGDReP
+Registering cgi-3001.2.2.2...

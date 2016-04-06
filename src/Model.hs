@@ -24,139 +24,15 @@ import Data.Int
 import GHC.Generics
 import Data.Aeson
 import Control.Applicative ((<$>), (<*>))
-
-share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
-Users
-    email String
-    password String
-    alias String
-    image_url String
-    show_email Bool
-    UniqueEmail email
-    date UTCTime default=CURRENT_TIMESTAMP
-    deriving Show
-Post
-    atom Int
-    material String
-    processing String
-    params String
-    image_url String
-    reference String
-    owner UsersId
-    material_url String
-    date UTCTime default=CURRENT_TIMESTAMP
-    deriving Show
-Comment
-    owner UsersId
-    post PostId
-    date UTCTime default=CURRENT_TIMESTAMP
-    text String
-    deriving Show
-|]
-
-newtype USER = USER (Int64, (Maybe Users))
-instance ToJSON USER where
-  toJSON (USER (uid, (Just (Users e p a i s d)))) = object
-        [ "id" .= uid,
-          "email" .= e,
-          "password" .= p,
-          "alias" .= a,
-          "image_url" .= i,
-          "show_email" .= s,
-          "date" .= d
-        ]
-  toJSON (USER (uid, Nothing)) = object []
-
-instance ToJSON Users where
-  toJSON (Users e p a i s d) = object
-        [ "email" .= e,
-          "password" .= p,
-          "alias" .= a,
-          "image_url" .= i,
-          "show_email" .= s,
-          "date" .= d
-        ]
-
-instance FromJSON Users where
-    parseJSON (Object o) = Users
-        <$> o .: "email"
-        <*> o .: "password"
-        <*> o .: "alias"
-        <*> o .: "image_url"
-        <*> o .: "show_email"
-        <*> o .: "date"
-    parseJSON _ = fail "Invalid Users"
-
-newtype POST = POST (Int64, (Maybe Post))
-instance ToJSON POST where
-  toJSON (POST (uid, (Just (Post a m p pp i r o mm d)))) = object
-        [ "id" .= uid,
-          "atom" .= a,
-          "material" .= m,
-          "processing" .= p,
-          "params" .= pp,
-          "image_url" .= i,
-          "reference" .= r,
-          "owner" .= o,
-          "material_u" .= mm,
-          "date" .= d
-        ]
-  toJSON (POST (uid, Nothing)) = object []
-
-instance ToJSON Post where
-  toJSON (Post a m p pp i r o mm d) = object
-        [ "atom" .= a,
-          "material" .= m,
-          "processing" .= p,
-          "params" .= pp,
-          "image_url" .= i,
-          "reference" .= r,
-          "owner" .= o,
-          "material_u" .= mm,
-          "date" .= d
-        ]
-
-instance FromJSON Post where
-    parseJSON (Object o) = Post
-        <$> o .: "atom"
-        <*> o .: "material"
-        <*> o .: "processing"
-        <*> o .: "params"
-        <*> o .: "image_url"
-        <*> o .: "reference"
-        <*> o .: "owner"
-        <*> o .: "material_u"
-        <*> o .: "date"
-    parseJSON _ = fail "Invalid Post"
-
-newtype COMMENT = COMMENT (Int64, (Maybe Comment))
-instance ToJSON COMMENT where
-  toJSON (COMMENT (uid, (Just (Comment o p d t)))) = object
-        [ "id"    .= uid,
-          "owner" .= o,
-          "post"  .= p,
-          "date"  .= d,
-          "text"  .= t
-        ]
-  toJSON (COMMENT (uid, Nothing)) = object []
-
-instance ToJSON Comment where
-  toJSON (Comment o p d t) = object
-        [ "owner" .= o,
-          "post"  .= p,
-          "date"  .= d,
-          "text"  .= t
-        ]
-
-instance FromJSON Comment where
-    parseJSON (Object o) = Comment
-        <$> o .: "owner"
-        <*> o .: "post" 
-        <*> o .: "date" 
-        <*> o .: "text" 
-    parseJSON _ = fail "Invalid Comment"
-
-data ID = Email String | Id Int64 deriving (Show)
+import Safe
+import GHC.Unicode
+import Data.Text.Lazy (toStrict, pack, unpack, Text)
+import Web.Scotty (Parsable, parseParam)
+import Data.Text.Encoding (encodeUtf8)
+import Text.Email.Validate (isValid)
+import Database
+import qualified Database.Esqueleto as E
+import Database.Esqueleto ((^.))
 
 connStr = "host=localhost dbname=communis_db user=communis password=facilderecordar789 port=5432"
 
@@ -169,14 +45,6 @@ inBackend action = runStderrLoggingT $ withPostgresqlPool connStr 10 $ \pool -> 
 toUserId :: Int64 -> UsersId
 toUserId = toSqlKey
 
--- toUserId2 :: ID -> Maybe UsersId
--- toUserId2 (Id a) = Just $ toSqlKey a
--- toUserId2 (Email em) = inBackend $ do
---   maybeUser <- getBy $ UniqueEmail em
---   case maybeUser of
---     Nothing -> liftIO Nothing
---     (Entity userId _) -> liftIO $ Just userId
-
 toPostId :: Int64 -> PostId
 toPostId = toSqlKey
 
@@ -184,9 +52,18 @@ toCommentId :: Int64 -> CommentId
 toCommentId = toSqlKey
 
 --User CRUD
-get_user :: ID -> IO (Maybe (Entity Users))
+get_user :: ID -> IO (Maybe Users)
 get_user (Id a) = inBackend . get . toUserId $ a
-get_user (Email e) = inBackend . getBy $ UniqueEmail e
+get_user (Email e) = inBackend . fmap (fmap unwrap) . getBy . UniqueEmail $ e
+    where unwrap (Entity _ usr) = usr
+
+type Page = Integer
+type PerPage = Integer
+data Pagination = Pag Page PerPage deriving Show
+
+get_users  = inBackend . E.select $
+             E.from $ \usr -> do
+                        return usr
 
 new_user :: Users -> IO ()
 new_user (Users email pass alias image_url show_email _) = inBackend $ do
@@ -222,7 +99,6 @@ delete_post = inBackend . delete . toPostId
 
 get_posts :: Int64 -> IO ([Entity Post])
 get_posts i = inBackend $ selectList [PostOwner ==. toUserId i] []
-
 
 -- Comments CRUD
 get_comment :: Int64 -> IO(Maybe Comment)

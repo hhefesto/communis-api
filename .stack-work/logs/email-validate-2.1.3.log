@@ -1,0 +1,27 @@
+Configuring email-validate-2.1.3...
+Building email-validate-2.1.3...
+Preprocessing library email-validate-2.1.3...
+[1 of 2] Compiling Text.Email.Parser ( src/Text/Email/Parser.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Text/Email/Parser.o )
+[2 of 2] Compiling Text.Email.Validate ( src/Text/Email/Validate.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Text/Email/Validate.o )
+
+src/Text/Email/Validate.hs:2:1: Warning: Tab character
+
+src/Text/Email/Validate.hs:3:1: Warning: Tab character
+
+src/Text/Email/Validate.hs:4:1: Warning: Tab character
+
+src/Text/Email/Validate.hs:5:1: Warning: Tab character
+
+src/Text/Email/Validate.hs:6:1: Warning: Tab character
+
+src/Text/Email/Validate.hs:7:1: Warning: Tab character
+
+src/Text/Email/Validate.hs:8:1: Warning: Tab character
+
+src/Text/Email/Validate.hs:9:1: Warning: Tab character
+
+src/Text/Email/Validate.hs:10:1: Warning: Tab character
+In-place registering email-validate-2.1.3...
+Installing library in
+/home/hefesto/.stack/snapshots/x86_64-linux/lts-3.10/7.10.2/lib/x86_64-linux-ghc-7.10.2/email-validate-2.1.3-KNOM4iwrKWXFb5Ec8otrSn
+Registering email-validate-2.1.3...

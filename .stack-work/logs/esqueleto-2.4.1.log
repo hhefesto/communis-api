@@ -1,0 +1,39 @@
+Configuring esqueleto-2.4.1...
+Building esqueleto-2.4.1...
+Preprocessing library esqueleto-2.4.1...
+[1 of 5] Compiling Database.Esqueleto.Internal.PersistentImport ( src/Database/Esqueleto/Internal/PersistentImport.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Database/Esqueleto/Internal/PersistentImport.o )
+[2 of 5] Compiling Database.Esqueleto.Internal.Language ( src/Database/Esqueleto/Internal/Language.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Database/Esqueleto/Internal/Language.o )
+
+src/Database/Esqueleto/Internal/Language.hs:46:1: Warning:
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+
+src/Database/Esqueleto/Internal/Language.hs:54:1: Warning:
+    The qualified import of ‘Data.ByteString.Lazy’ is redundant
+      except perhaps to import instances from ‘Data.ByteString.Lazy’
+    To import instances alone, use: import Data.ByteString.Lazy()
+[3 of 5] Compiling Database.Esqueleto.Internal.Sql ( src/Database/Esqueleto/Internal/Sql.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Database/Esqueleto/Internal/Sql.o )
+
+src/Database/Esqueleto/Internal/Sql.hs:52:1: Warning:
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+
+src/Database/Esqueleto/Internal/Sql.hs:62:1: Warning:
+    The import of ‘Monoid’ from module ‘Data.Monoid’ is redundant
+
+src/Database/Esqueleto/Internal/Sql.hs:647:18: Warning:
+    This binding for ‘b’ shadows the existing binding
+      bound at src/Database/Esqueleto/Internal/Sql.hs:639:34
+
+src/Database/Esqueleto/Internal/Sql.hs:418:7: Warning:
+    Pattern match(es) are non-exhaustive
+    In an equation for ‘toDistinctOn’:
+        Patterns not matched: EOrderRandom
+[4 of 5] Compiling Database.Esqueleto.PostgreSQL ( src/Database/Esqueleto/PostgreSQL.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Database/Esqueleto/PostgreSQL.o )
+[5 of 5] Compiling Database.Esqueleto ( src/Database/Esqueleto.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Database/Esqueleto.o )
+In-place registering esqueleto-2.4.1...
+Installing library in
+/home/hefesto/.stack/snapshots/x86_64-linux/lts-3.10/7.10.2/lib/x86_64-linux-ghc-7.10.2/esqueleto-2.4.1-8fFreT2eW1y4gR5TwNNJBy
+Registering esqueleto-2.4.1...

@@ -29,4 +29,5 @@ executable communis-api
                        text,
                        safe,
                        email-validate,
-                       esqueleto
+                       esqueleto,
+                       servant

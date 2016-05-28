@@ -9,10 +9,8 @@ import Model
 import Data.Int
 import Control.Monad.IO.Class (liftIO)
 import qualified Data.Aeson as A
-import Data.Text.Lazy
+import Data.Text.Lazy 
 import Database
-import Data.Text
-import Servant.API
 
 main :: IO ()
 main = do

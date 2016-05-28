@@ -1,0 +1,599 @@
+Configuring bson-0.3.1...
+Building bson-0.3.1...
+Preprocessing library bson-0.3.1...
+[1 of 2] Compiling Data.Bson        ( Data/Bson.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Data/Bson.o )
+
+Data/Bson.hs:13:1: Warning: Tab character
+
+Data/Bson.hs:14:1: Warning: Tab character
+
+Data/Bson.hs:15:1: Warning: Tab character
+
+Data/Bson.hs:16:1: Warning: Tab character
+
+Data/Bson.hs:17:1: Warning: Tab character
+
+Data/Bson.hs:18:1: Warning: Tab character
+
+Data/Bson.hs:19:1: Warning: Tab character
+
+Data/Bson.hs:20:1: Warning: Tab character
+
+Data/Bson.hs:21:1: Warning: Tab character
+
+Data/Bson.hs:22:1: Warning: Tab character
+
+Data/Bson.hs:23:1: Warning: Tab character
+
+Data/Bson.hs:24:1: Warning: Tab character
+
+Data/Bson.hs:71:1: Warning: Tab character
+
+Data/Bson.hs:72:1: Warning: Tab character
+
+Data/Bson.hs:88:1: Warning: Tab character
+
+Data/Bson.hs:101:1: Warning: Tab character
+
+Data/Bson.hs:102:1: Warning: Tab character
+
+Data/Bson.hs:103:1: Warning: Tab character
+
+Data/Bson.hs:116:1: Warning: Tab character
+
+Data/Bson.hs:117:1: Warning: Tab character
+
+Data/Bson.hs:118:1: Warning: Tab character
+
+Data/Bson.hs:136:1: Warning: Tab character
+
+Data/Bson.hs:145:1: Warning: Tab character
+
+Data/Bson.hs:146:1: Warning: Tab character
+
+Data/Bson.hs:147:1: Warning: Tab character
+
+Data/Bson.hs:148:1: Warning: Tab character
+
+Data/Bson.hs:149:1: Warning: Tab character
+
+Data/Bson.hs:150:1: Warning: Tab character
+
+Data/Bson.hs:151:1: Warning: Tab character
+
+Data/Bson.hs:152:1: Warning: Tab character
+
+Data/Bson.hs:153:1: Warning: Tab character
+
+Data/Bson.hs:154:1: Warning: Tab character
+
+Data/Bson.hs:155:1: Warning: Tab character
+
+Data/Bson.hs:156:1: Warning: Tab character
+
+Data/Bson.hs:157:1: Warning: Tab character
+
+Data/Bson.hs:158:1: Warning: Tab character
+
+Data/Bson.hs:159:1: Warning: Tab character
+
+Data/Bson.hs:160:1: Warning: Tab character
+
+Data/Bson.hs:161:1: Warning: Tab character
+
+Data/Bson.hs:162:1: Warning: Tab character
+
+Data/Bson.hs:163:1: Warning: Tab character
+
+Data/Bson.hs:164:1: Warning: Tab character
+
+Data/Bson.hs:165:1: Warning: Tab character
+
+Data/Bson.hs:168:1: Warning: Tab character
+
+Data/Bson.hs:173:1: Warning: Tab character
+
+Data/Bson.hs:174:1: Warning: Tab character
+
+Data/Bson.hs:175:1: Warning: Tab character
+
+Data/Bson.hs:176:1: Warning: Tab character
+
+Data/Bson.hs:177:1: Warning: Tab character
+
+Data/Bson.hs:178:1: Warning: Tab character
+
+Data/Bson.hs:179:1: Warning: Tab character
+
+Data/Bson.hs:180:1: Warning: Tab character
+
+Data/Bson.hs:181:1: Warning: Tab character
+
+Data/Bson.hs:182:1: Warning: Tab character
+
+Data/Bson.hs:183:1: Warning: Tab character
+
+Data/Bson.hs:184:1: Warning: Tab character
+
+Data/Bson.hs:185:1: Warning: Tab character
+
+Data/Bson.hs:186:1: Warning: Tab character
+
+Data/Bson.hs:187:1: Warning: Tab character
+
+Data/Bson.hs:188:1: Warning: Tab character
+
+Data/Bson.hs:189:1: Warning: Tab character
+
+Data/Bson.hs:190:1: Warning: Tab character
+
+Data/Bson.hs:191:1: Warning: Tab character
+
+Data/Bson.hs:192:1: Warning: Tab character
+
+Data/Bson.hs:199:1: Warning: Tab character
+
+Data/Bson.hs:200:1: Warning: Tab character
+
+Data/Bson.hs:201:1: Warning: Tab character
+
+Data/Bson.hs:202:1: Warning: Tab character
+
+Data/Bson.hs:203:1: Warning: Tab character
+
+Data/Bson.hs:218:1: Warning: Tab character
+
+Data/Bson.hs:220:1: Warning: Tab character
+
+Data/Bson.hs:221:1: Warning: Tab character
+
+Data/Bson.hs:223:1: Warning: Tab character
+
+Data/Bson.hs:224:1: Warning: Tab character
+
+Data/Bson.hs:226:1: Warning: Tab character
+
+Data/Bson.hs:228:1: Warning: Tab character
+
+Data/Bson.hs:229:1: Warning: Tab character
+
+Data/Bson.hs:230:1: Warning: Tab character
+
+Data/Bson.hs:232:1: Warning: Tab character
+
+Data/Bson.hs:233:1: Warning: Tab character
+
+Data/Bson.hs:234:1: Warning: Tab character
+
+Data/Bson.hs:237:1: Warning: Tab character
+
+Data/Bson.hs:238:1: Warning: Tab character
+
+Data/Bson.hs:239:1: Warning: Tab character
+
+Data/Bson.hs:240:1: Warning: Tab character
+
+Data/Bson.hs:241:1: Warning: Tab character
+
+Data/Bson.hs:244:1: Warning: Tab character
+
+Data/Bson.hs:245:1: Warning: Tab character
+
+Data/Bson.hs:246:1: Warning: Tab character
+
+Data/Bson.hs:247:1: Warning: Tab character
+
+Data/Bson.hs:248:1: Warning: Tab character
+
+Data/Bson.hs:251:1: Warning: Tab character
+
+Data/Bson.hs:252:1: Warning: Tab character
+
+Data/Bson.hs:253:1: Warning: Tab character
+
+Data/Bson.hs:254:1: Warning: Tab character
+
+Data/Bson.hs:257:1: Warning: Tab character
+
+Data/Bson.hs:258:1: Warning: Tab character
+
+Data/Bson.hs:259:1: Warning: Tab character
+
+Data/Bson.hs:260:1: Warning: Tab character
+
+Data/Bson.hs:261:1: Warning: Tab character
+
+Data/Bson.hs:262:1: Warning: Tab character
+
+Data/Bson.hs:263:1: Warning: Tab character
+
+Data/Bson.hs:264:1: Warning: Tab character
+
+Data/Bson.hs:265:1: Warning: Tab character
+
+Data/Bson.hs:266:1: Warning: Tab character
+
+Data/Bson.hs:269:1: Warning: Tab character
+
+Data/Bson.hs:270:1: Warning: Tab character
+
+Data/Bson.hs:271:1: Warning: Tab character
+
+Data/Bson.hs:272:1: Warning: Tab character
+
+Data/Bson.hs:273:1: Warning: Tab character
+
+Data/Bson.hs:274:1: Warning: Tab character
+
+Data/Bson.hs:277:1: Warning: Tab character
+
+Data/Bson.hs:278:1: Warning: Tab character
+
+Data/Bson.hs:281:1: Warning: Tab character
+
+Data/Bson.hs:282:1: Warning: Tab character
+
+Data/Bson.hs:285:1: Warning: Tab character
+
+Data/Bson.hs:286:1: Warning: Tab character
+
+Data/Bson.hs:287:1: Warning: Tab character
+
+Data/Bson.hs:290:1: Warning: Tab character
+
+Data/Bson.hs:291:1: Warning: Tab character
+
+Data/Bson.hs:292:1: Warning: Tab character
+
+Data/Bson.hs:295:1: Warning: Tab character
+
+Data/Bson.hs:296:1: Warning: Tab character
+
+Data/Bson.hs:297:1: Warning: Tab character
+
+Data/Bson.hs:300:1: Warning: Tab character
+
+Data/Bson.hs:301:1: Warning: Tab character
+
+Data/Bson.hs:302:1: Warning: Tab character
+
+Data/Bson.hs:305:1: Warning: Tab character
+
+Data/Bson.hs:306:1: Warning: Tab character
+
+Data/Bson.hs:307:1: Warning: Tab character
+
+Data/Bson.hs:310:1: Warning: Tab character
+
+Data/Bson.hs:311:1: Warning: Tab character
+
+Data/Bson.hs:312:1: Warning: Tab character
+
+Data/Bson.hs:315:1: Warning: Tab character
+
+Data/Bson.hs:316:1: Warning: Tab character
+
+Data/Bson.hs:317:1: Warning: Tab character
+
+Data/Bson.hs:320:1: Warning: Tab character
+
+Data/Bson.hs:321:1: Warning: Tab character
+
+Data/Bson.hs:322:1: Warning: Tab character
+
+Data/Bson.hs:325:1: Warning: Tab character
+
+Data/Bson.hs:326:1: Warning: Tab character
+
+Data/Bson.hs:327:1: Warning: Tab character
+
+Data/Bson.hs:330:1: Warning: Tab character
+
+Data/Bson.hs:331:1: Warning: Tab character
+
+Data/Bson.hs:334:1: Warning: Tab character
+
+Data/Bson.hs:335:1: Warning: Tab character
+
+Data/Bson.hs:336:1: Warning: Tab character
+
+Data/Bson.hs:339:1: Warning: Tab character
+
+Data/Bson.hs:340:1: Warning: Tab character
+
+Data/Bson.hs:341:1: Warning: Tab character
+
+Data/Bson.hs:344:1: Warning: Tab character
+
+Data/Bson.hs:345:1: Warning: Tab character
+
+Data/Bson.hs:346:1: Warning: Tab character
+
+Data/Bson.hs:347:1: Warning: Tab character
+
+Data/Bson.hs:350:1: Warning: Tab character
+
+Data/Bson.hs:351:1: Warning: Tab character
+
+Data/Bson.hs:352:1: Warning: Tab character
+
+Data/Bson.hs:353:1: Warning: Tab character
+
+Data/Bson.hs:354:1: Warning: Tab character
+
+Data/Bson.hs:357:1: Warning: Tab character
+
+Data/Bson.hs:358:1: Warning: Tab character
+
+Data/Bson.hs:359:1: Warning: Tab character
+
+Data/Bson.hs:360:1: Warning: Tab character
+
+Data/Bson.hs:361:1: Warning: Tab character
+
+Data/Bson.hs:364:1: Warning: Tab character
+
+Data/Bson.hs:365:1: Warning: Tab character
+
+Data/Bson.hs:366:1: Warning: Tab character
+
+Data/Bson.hs:367:1: Warning: Tab character
+
+Data/Bson.hs:368:1: Warning: Tab character
+
+Data/Bson.hs:371:1: Warning: Tab character
+
+Data/Bson.hs:372:1: Warning: Tab character
+
+Data/Bson.hs:373:1: Warning: Tab character
+
+Data/Bson.hs:374:1: Warning: Tab character
+
+Data/Bson.hs:375:1: Warning: Tab character
+
+Data/Bson.hs:376:1: Warning: Tab character
+
+Data/Bson.hs:379:1: Warning: Tab character
+
+Data/Bson.hs:380:1: Warning: Tab character
+
+Data/Bson.hs:381:1: Warning: Tab character
+
+Data/Bson.hs:384:1: Warning: Tab character
+
+Data/Bson.hs:385:1: Warning: Tab character
+
+Data/Bson.hs:386:1: Warning: Tab character
+
+Data/Bson.hs:391:1: Warning: Tab character
+
+Data/Bson.hs:392:1: Warning: Tab character
+
+Data/Bson.hs:393:1: Warning: Tab character
+
+Data/Bson.hs:394:1: Warning: Tab character
+
+Data/Bson.hs:395:1: Warning: Tab character
+
+Data/Bson.hs:439:1: Warning: Tab character
+
+Data/Bson.hs:442:1: Warning: Tab character
+
+Data/Bson.hs:443:1: Warning: Tab character
+
+Data/Bson.hs:444:1: Warning: Tab character
+
+Data/Bson.hs:445:1: Warning: Tab character
+
+Data/Bson.hs:454:1: Warning: Tab character
+
+Data/Bson.hs:455:1: Warning: Tab character
+
+Data/Bson.hs:456:1: Warning: Tab character
+
+Data/Bson.hs:457:1: Warning: Tab character
+
+Data/Bson.hs:459:1: Warning: Tab character
+
+Data/Bson.hs:460:1: Warning: Tab character
+
+Data/Bson.hs:461:2: Warning: Tab character
+
+Data/Bson.hs:462:2: Warning: Tab character
+
+Data/Bson.hs:463:2: Warning: Tab character
+
+Data/Bson.hs:464:2: Warning: Tab character
+
+Data/Bson.hs:465:2: Warning: Tab character
+
+Data/Bson.hs:466:2: Warning: Tab character
+[2 of 2] Compiling Data.Bson.Binary ( Data/Bson/Binary.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.4.0/build/Data/Bson/Binary.o )
+
+Data/Bson/Binary.hs:4:1: Warning: Tab character
+
+Data/Bson/Binary.hs:5:1: Warning: Tab character
+
+Data/Bson/Binary.hs:6:1: Warning: Tab character
+
+Data/Bson/Binary.hs:7:1: Warning: Tab character
+
+Data/Bson/Binary.hs:8:1: Warning: Tab character
+
+Data/Bson/Binary.hs:41:1: Warning: Tab character
+
+Data/Bson/Binary.hs:42:1: Warning: Tab character
+
+Data/Bson/Binary.hs:43:1: Warning: Tab character
+
+Data/Bson/Binary.hs:44:1: Warning: Tab character
+
+Data/Bson/Binary.hs:45:1: Warning: Tab character
+
+Data/Bson/Binary.hs:46:1: Warning: Tab character
+
+Data/Bson/Binary.hs:47:1: Warning: Tab character
+
+Data/Bson/Binary.hs:48:1: Warning: Tab character
+
+Data/Bson/Binary.hs:49:1: Warning: Tab character
+
+Data/Bson/Binary.hs:50:1: Warning: Tab character
+
+Data/Bson/Binary.hs:51:1: Warning: Tab character
+
+Data/Bson/Binary.hs:52:1: Warning: Tab character
+
+Data/Bson/Binary.hs:53:1: Warning: Tab character
+
+Data/Bson/Binary.hs:54:1: Warning: Tab character
+
+Data/Bson/Binary.hs:55:1: Warning: Tab character
+
+Data/Bson/Binary.hs:56:1: Warning: Tab character
+
+Data/Bson/Binary.hs:57:1: Warning: Tab character
+
+Data/Bson/Binary.hs:58:1: Warning: Tab character
+
+Data/Bson/Binary.hs:59:1: Warning: Tab character
+
+Data/Bson/Binary.hs:60:1: Warning: Tab character
+
+Data/Bson/Binary.hs:61:1: Warning: Tab character
+
+Data/Bson/Binary.hs:62:1: Warning: Tab character
+
+Data/Bson/Binary.hs:63:1: Warning: Tab character
+
+Data/Bson/Binary.hs:64:1: Warning: Tab character
+
+Data/Bson/Binary.hs:66:1: Warning: Tab character
+
+Data/Bson/Binary.hs:71:1: Warning: Tab character
+
+Data/Bson/Binary.hs:72:1: Warning: Tab character
+
+Data/Bson/Binary.hs:73:1: Warning: Tab character
+
+Data/Bson/Binary.hs:74:1: Warning: Tab character
+
+Data/Bson/Binary.hs:75:1: Warning: Tab character
+
+Data/Bson/Binary.hs:76:1: Warning: Tab character
+
+Data/Bson/Binary.hs:77:1: Warning: Tab character
+
+Data/Bson/Binary.hs:78:1: Warning: Tab character
+
+Data/Bson/Binary.hs:79:1: Warning: Tab character
+
+Data/Bson/Binary.hs:80:1: Warning: Tab character
+
+Data/Bson/Binary.hs:81:1: Warning: Tab character
+
+Data/Bson/Binary.hs:82:1: Warning: Tab character
+
+Data/Bson/Binary.hs:83:1: Warning: Tab character
+
+Data/Bson/Binary.hs:84:1: Warning: Tab character
+
+Data/Bson/Binary.hs:85:1: Warning: Tab character
+
+Data/Bson/Binary.hs:86:1: Warning: Tab character
+
+Data/Bson/Binary.hs:87:1: Warning: Tab character
+
+Data/Bson/Binary.hs:88:1: Warning: Tab character
+
+Data/Bson/Binary.hs:89:1: Warning: Tab character
+
+Data/Bson/Binary.hs:90:1: Warning: Tab character
+
+Data/Bson/Binary.hs:91:1: Warning: Tab character
+
+Data/Bson/Binary.hs:92:1: Warning: Tab character
+
+Data/Bson/Binary.hs:93:1: Warning: Tab character
+
+Data/Bson/Binary.hs:94:1: Warning: Tab character
+
+Data/Bson/Binary.hs:95:1: Warning: Tab character
+
+Data/Bson/Binary.hs:96:1: Warning: Tab character
+
+Data/Bson/Binary.hs:97:1: Warning: Tab character
+
+Data/Bson/Binary.hs:98:1: Warning: Tab character
+
+Data/Bson/Binary.hs:99:1: Warning: Tab character
+
+Data/Bson/Binary.hs:100:1: Warning: Tab character
+
+Data/Bson/Binary.hs:125:1: Warning: Tab character
+
+Data/Bson/Binary.hs:126:1: Warning: Tab character
+
+Data/Bson/Binary.hs:133:1: Warning: Tab character
+
+Data/Bson/Binary.hs:134:1: Warning: Tab character
+
+Data/Bson/Binary.hs:135:1: Warning: Tab character
+
+Data/Bson/Binary.hs:139:1: Warning: Tab character
+
+Data/Bson/Binary.hs:140:1: Warning: Tab character
+
+Data/Bson/Binary.hs:141:1: Warning: Tab character
+
+Data/Bson/Binary.hs:142:1: Warning: Tab character
+
+Data/Bson/Binary.hs:146:1: Warning: Tab character
+
+Data/Bson/Binary.hs:147:1: Warning: Tab character
+
+Data/Bson/Binary.hs:148:1: Warning: Tab character
+
+Data/Bson/Binary.hs:152:1: Warning: Tab character
+
+Data/Bson/Binary.hs:153:1: Warning: Tab character
+
+Data/Bson/Binary.hs:154:1: Warning: Tab character
+
+Data/Bson/Binary.hs:156:1: Warning: Tab character
+
+Data/Bson/Binary.hs:157:1: Warning: Tab character
+
+Data/Bson/Binary.hs:158:1: Warning: Tab character
+
+Data/Bson/Binary.hs:162:1: Warning: Tab character
+
+Data/Bson/Binary.hs:171:1: Warning: Tab character
+
+Data/Bson/Binary.hs:172:1: Warning: Tab character
+
+Data/Bson/Binary.hs:173:1: Warning: Tab character
+
+Data/Bson/Binary.hs:177:1: Warning: Tab character
+
+Data/Bson/Binary.hs:178:1: Warning: Tab character
+
+Data/Bson/Binary.hs:179:1: Warning: Tab character
+
+Data/Bson/Binary.hs:180:1: Warning: Tab character
+
+Data/Bson/Binary.hs:224:1: Warning: Tab character
+
+Data/Bson/Binary.hs:225:1: Warning: Tab character
+
+Data/Bson/Binary.hs:229:1: Warning: Tab character
+
+Data/Bson/Binary.hs:230:1: Warning: Tab character
+
+Data/Bson/Binary.hs:231:1: Warning: Tab character
+
+Data/Bson/Binary.hs:232:1: Warning: Tab character
+In-place registering bson-0.3.1...
+Installing library in
+/home/hefesto/.stack/snapshots/x86_64-linux/lts-3.10/7.10.2/lib/x86_64-linux-ghc-7.10.2/bson-0.3.1-KuJXMjsUOCvKVZO6BQZDVw
+Registering bson-0.3.1...

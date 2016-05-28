@@ -30,4 +30,5 @@ executable communis-api
                        safe,
                        email-validate,
                        esqueleto,
-                       servant
+                       servant,
+                       mongoDB

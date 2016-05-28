@@ -61,9 +61,9 @@ type Page = Integer
 type PerPage = Integer
 data Pagination = Pag Page PerPage deriving Show
 
-get_users  = inBackend . E.select $
-             E.from $ \usr -> do
-                        return usr
+-- get_users  = inBackend . E.select $
+--              E.from $ \usr -> do
+--                         return usr
 
 new_user :: Users -> IO ()
 new_user (Users email pass alias image_url show_email _) = inBackend $ do
@@ -117,29 +117,3 @@ update_comment id comment = inBackend $ replace (toCommentId id) comment
 delete_comment :: Int64 -> IO ()
 delete_comment = inBackend . delete . toCommentId
 
-    share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
-    Users
-        email String
-        password String
-        alias String
-        image_url String
-        show_email Bool
-        UniqueEmail email
-        date UTCTime default=CURRENT_TIMESTAMP
-        deriving Show
-    |]
-
-    connStr = "host=localhost dbname=communis_db user=communis password=facilderecordar789 port=5432"
-
-    inBackend :: ReaderT SqlBackend (NoLoggingT (ResourceT IO)) a-> IO a
-    inBackend action = runStderrLoggingT $ withPostgresqlPool connStr 10 $ \pool -> liftIO $ do
-      flip runSqlPersistMPool pool $ do
-        runMigration migrateAll
-        action
-
-    toUserId :: Int64 -> UsersId
-    toUserId = toSqlKey
-
-    get_users  = inBackend . E.select $
-                 E.from $ \usr -> do
-                            return usr

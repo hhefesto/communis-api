@@ -31,4 +31,5 @@ executable communis-api
                        email-validate,
                        esqueleto,
                        servant,
-                       mongoDB
+                       mongoDB,
+                       dates

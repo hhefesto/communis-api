@@ -11,6 +11,7 @@ import Control.Monad.IO.Class (liftIO)
 import qualified Data.Aeson as A
 import Data.Text.Lazy 
 import Database
+import Mongo
 
 main :: IO ()
 main = do

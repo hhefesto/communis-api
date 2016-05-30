@@ -1,28 +1,37 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ExtendedDefaultRules #-}
+{-# LANGUAGE DeriveGeneric #-}
 
-module Main (main) where
+module Mongo where
 
 import Database.MongoDB    (Action, Document, Document, Value, access,
                             close, connect, delete, exclude, find,
-                            host, insertMany, master, project, rest,
+                            host, insert, insertMany, master, project, rest,
                             select, sort, (=:))
-import Control.Monad.Trans (liftIO)
+import Control.Monad.IO.Class  (liftIO)
+--import Control.Monad.Trans (liftIO)
+import GHC.Generics
+import Data.Dates
 
-main :: IO ()
-main = do
+run :: Action IO () -> IO ()
+run act = do
     pipe <- connect (host "127.0.0.1")
-    e <- access pipe master "baseball" run
+    e <- access pipe master "communis_db" act
     close pipe
     print e
 
-run :: Action IO ()
-run = do
-    clearTeams
-    insertTeams
-    allTeams >>= printDocs "All Teams"
-    nationalLeagueTeams >>= printDocs "National League Teams"
-    newYorkTeams >>= printDocs "New York Teams"
+data User = User {
+    email :: String,
+    password :: String,
+    alias :: String,
+    image_url :: String,
+    show_email :: Bool,
+    date :: DateTime
+    } deriving (Show)
+
+-- insert_user :: User -> Action IO []
+-- insert_user u = insert "User" u
+
 
 clearTeams :: Action IO ()
 clearTeams = delete (select [] "team")
@@ -45,3 +54,31 @@ newYorkTeams = rest =<< find (select ["home.state" =: "NY"] "team") {project = [
 
 printDocs :: String -> [Document] -> Action IO ()
 printDocs title docs = liftIO $ putStrLn title >> mapM_ (print . exclude ["_id"]) docs
+
+
+-- data Post = Post {
+--     atom :: Int,
+--     material :: String,
+--     processing String
+--     params String
+--     image_url String
+--     reference String
+--     owner UsersId
+--     material_url String
+--     date UTCTime
+-- }
+-- Comment
+--     owner UsersId
+--     post PostId
+--     date UTCTime default=CURRENT_TIMESTAMP
+--     text String
+--     deriving Show
+
+
+-- run :: Action IO ()
+-- run = do
+--     clearTeams
+--     insertTeams
+--     allTeams >>= printDocs "All Teams"
+--     nationalLeagueTeams >>= printDocs "National League Teams"
+--     newYorkTeams >>= printDocs "New York Teams"
